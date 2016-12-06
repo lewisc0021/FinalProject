@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleStockPopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SymbolData">
+    <Key>
+      <PropertyRef Name="Symbol" />
+    </Key>
+    <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SampleStockPopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SymbolDatas" EntityType="Self.SymbolData" />
+  </EntityContainer>
+</Schema>
