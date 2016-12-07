@@ -12,7 +12,44 @@
 </head>
 <body>
     <div> 
-    @Model.Name
-    </div>
+    <h3>Symbol :         @Model.Symbol</h3>  
+    <h3>Company :        @Model.Name</h3>
+    <h3>Bid :            @Model.Bid</h3>
+    <h3>Ask :            @Model.Ask</h3>
+    <h3>Open Price :     @Model.Open</h3>
+    <h3>Closing Price :  @Model.PreviousClose</h3>
+    <h3>Latest Price :   @Model.Last</h3>  
+    </div>             
+<div>
+    <h3>@Html.ActionLink("Stumble", "StumblePage", "Results")</h3>
+</div>
+  
+<!--public string Symbol { get; set; }
+    public string Name { get; set; }
+    public decimal Bid { get; set; }
+    public decimal Ask { get; set; }
+    public decimal Open { get; set; }
+    public decimal PreviousClose { get; set; }
+    public decimal Last { get; set; }
+-->
+
+<!--<div>
+    <table border="1">        
+        @if (ViewBag.myStocks != null)
+        {
+            foreach (var item in ViewBag.myStocks)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Symbol</td>
+                    <td>@item.Last</td>
+                </tr>
+            }
+        }
+</table>
+</div>-->
+
+
+
 </body>
 </html>

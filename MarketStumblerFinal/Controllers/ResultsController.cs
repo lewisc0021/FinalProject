@@ -24,13 +24,13 @@ namespace MarketStumblerFinal.Controllers
             List<string> refinedPop = new List<string>();
             foreach (var item in refinedPop1)
             {
-                refinedPop.Add(item.ToString());
+                refinedPop.Add(item.Symbol);
             }
             return refinedPop;
         }
 
 
-        public ActionResult Stumble()
+        public ActionResult StumblePage()
         {
             List<string> refinedPop = GetSymbols();
             string csvData;
@@ -45,20 +45,19 @@ namespace MarketStumblerFinal.Controllers
 
             }
 
-            Stock Company = new Stock();
             List<Stock> Companies = YahooFinance.Parse(csvData);
-            Company = Companies[0];            
-
-
-
-            ViewBag.myStock = Company;
-
+            Stock Company = Companies.ElementAt(0);
+            //Stock Company = new Stock();
+            //ViewBag.myStocks = Companies;
             return View("StumblePage", Company);
-
         }
 
+        //private static decimal calcBeta(Stock Company)
+        //{
+
+        //}
 
 
 
-    }
+    }//END
 }
