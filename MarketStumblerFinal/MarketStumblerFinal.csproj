@@ -227,6 +227,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SymbolDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserPreference.cs">
+      <DependentUpon>SymbolDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\YahooFinance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

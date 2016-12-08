@@ -25,11 +25,66 @@ namespace MarketStumblerFinal.Models
                 Stock Company = new Stock();
                 Company.Symbol = cols[0];
                 Company.Name = cols[1];
-                Company.Bid = Convert.ToDecimal(cols[2+i]);
-                Company.Ask = Convert.ToDecimal(cols[3+i]);
-                Company.Open = Convert.ToDecimal(cols[4+i]);
-                Company.PreviousClose = Convert.ToDecimal(cols[5+i]);
-                Company.Last = Convert.ToDecimal(cols[6+i]);
+                try
+                {
+                    Company.Bid = Convert.ToDecimal(cols[2 + i]);
+                }
+                catch 
+                {
+
+                    Company.Bid = decimal.Zero;
+                }
+                
+                
+
+                try
+                {
+                    Company.Ask = Convert.ToDecimal(cols[3 + i]);
+                }
+                catch
+                {
+
+                    Company.Ask = decimal.Zero;
+                }
+               
+
+                try
+                {
+                    Company.Open = Convert.ToDecimal(cols[4 + i]);
+                   
+                }
+                catch
+                {
+
+                    Company.Open = decimal.Zero;
+                }
+
+                
+
+                try
+                {
+                    Company.PreviousClose = Convert.ToDecimal(cols[5 + i]);
+                }
+                catch
+                {
+
+                    Company.PreviousClose = decimal.Zero;
+                }
+
+                
+
+                try
+                {
+                    Company.Last = Convert.ToDecimal(cols[6 + i]);
+
+                }
+                catch
+                {
+
+                    Company.Last = decimal.Zero;
+                }
+
+                
 
                 stockInfo.Add(Company);
 

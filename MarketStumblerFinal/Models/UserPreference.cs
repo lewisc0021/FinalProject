@@ -15,12 +15,12 @@ namespace MarketStumblerFinal.Models
     public partial class UserPreference
     {
         public string UserID { get; set; }
-        public Nullable<bool> Tech { get; set; }
         public Nullable<bool> Consumer { get; set; }
         public Nullable<bool> Finance { get; set; }
         public Nullable<bool> Manufact { get; set; }
         public Nullable<bool> Educ { get; set; }
         public Nullable<bool> Transport { get; set; }
         public Nullable<bool> Auto { get; set; }
+        public Nullable<bool> Tech { get; set; }
     }
 }

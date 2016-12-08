@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace MarketStumblerFinal.Controllers
 {
     public class ResultsController : Controller
@@ -19,14 +20,96 @@ namespace MarketStumblerFinal.Controllers
 
         private static List<string> GetSymbols()
         {
-            SampleStockPopEntities dbContext = new SampleStockPopEntities();
-            List<SymbolData> refinedPop1 = dbContext.SymbolDatas.ToList();
-            List<string> refinedPop = new List<string>();
-            foreach (var item in refinedPop1)
-            {
-                refinedPop.Add(item.Symbol);
-            }
-            return refinedPop;
+            StockUniverseEntities dbContext = new StockUniverseEntities();
+            List<SymbolData> allStocks = dbContext.SymbolDatas.ToList();
+            List<string> userSymbols = new List<string>();
+
+            UserPreference preference = dbContext.UserPreferences.Find("002");
+
+            if (preference.Auto == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry.Trim() == "Auto") // have to match the exact industry name here
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Transport == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry == "Transport")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Manufact == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry == "Manufact")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Consumer == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry == "Consumer")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Educ == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry == "Educ")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Finance == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry == "Finance")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Tech == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry == "Tech")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+            //return RedirectToAction("StumblePage", "Results", userSymbols);
+           
+
+            //foreach (var item in allStocks)
+            //{
+            //    userSymbols.Add(item.Symbol);
+            //}
+            return userSymbols;
         }
 
 

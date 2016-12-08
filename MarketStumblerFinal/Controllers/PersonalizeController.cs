@@ -43,8 +43,8 @@ namespace MarketStumblerFinal.Controllers
                 }
             }
             //now I need to create a db object to update the userpreference table
-            SampleStockPopEntities dbContext = new SampleStockPopEntities();
-            UserPreference preference = dbContext.UserPreferences.Find("001");//will find userID..should be dynamic
+            StockUniverseEntities dbContext = new StockUniverseEntities();
+            UserPreference preference = dbContext.UserPreferences.Find("002");//will find userID..should be dynamic
 
             preference.Tech = (bool)chosenPreferences["Tech"];
             preference.Consumer = (bool)chosenPreferences["Consumer"];
@@ -54,7 +54,7 @@ namespace MarketStumblerFinal.Controllers
             preference.Transport = (bool)chosenPreferences["Transport"];
             preference.Auto = (bool)chosenPreferences["Auto"];
             dbContext.SaveChanges();
-            return View();
+            return RedirectToAction("StumblePage", "Results");
         }
 
 
@@ -62,93 +62,7 @@ namespace MarketStumblerFinal.Controllers
 
 
         //This is refined database - it creates a list of stock symbols that coorrespond to user preference, industry selections
-        public List<string> refineDataBase()
-        {
-            SampleStockPopEntities dbContext = new SampleStockPopEntities();
-            List<SymbolData> allStocks = dbContext.SymbolDatas.ToList();
-            List<string> userSymbols = new List<string>();
-
-            UserPreference preference = dbContext.UserPreferences.Find("001");
-
-            if (preference.Auto == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Auto") // have to match the exact industry name here
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-
-            if (preference.Transport == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Transport")
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-
-            if (preference.Manufact == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Manufact")
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-
-            if (preference.Consumer == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Consumer")
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-
-            if (preference.Educ == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Educ")
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-
-            if (preference.Finance == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Finance")
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-
-            if (preference.Tech == true)
-            {//
-                foreach (var item in allStocks)
-                {
-                    if (item.Industry == "Tech")
-                    {
-                        userSymbols.Add(item.Symbol);
-                    }
-                }
-            }//
-            //return RedirectToAction("StumblePage", "Results", userSymbols);
-            return userSymbols;
-        }
+        
 
 
 

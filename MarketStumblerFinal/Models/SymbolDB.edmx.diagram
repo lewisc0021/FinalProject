@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3e0bc6b1b2474223a232d1c169cf393a" Name="Diagram1">
-        <EntityTypeShape EntityType="SampleStockPopModel.SymbolData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SampleStockPopModel.UserPreference" Width="1.5" PointX="3.375" PointY="0.75" />
+      <Diagram DiagramId="4cf9c1108b9246bc88529b4399870b08" Name="Diagram1">
+        <EntityTypeShape EntityType="StockUniverseModel.SymbolData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockUniverseModel.UserPreference" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

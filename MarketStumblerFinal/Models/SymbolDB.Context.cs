@@ -13,10 +13,10 @@ namespace MarketStumblerFinal.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SampleStockPopEntities : DbContext
+    public partial class StockUniverseEntities : DbContext
     {
-        public SampleStockPopEntities()
-            : base("name=SampleStockPopEntities")
+        public StockUniverseEntities()
+            : base("name=StockUniverseEntities")
         {
         }
     
