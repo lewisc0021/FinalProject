@@ -1,4 +1,6 @@
-﻿using MarketStumblerFinal.Models;
+﻿///Personalize Controller
+
+using MarketStumblerFinal.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,22 +25,27 @@ namespace MarketStumblerFinal.Controllers
         {
             Hashtable chosenPreferences = new Hashtable();
             //this is not the best way to do this-if I could get back a false by default(true if checked) that would be ideal
+            chosenPreferences["Auto"] = false;
+            chosenPreferences["Finance"] = false;
+            chosenPreferences["Transport"] = false;
             chosenPreferences["Tech"] = false;
             chosenPreferences["Consumer"] = false;
-            chosenPreferences["Finance"] = false;
             chosenPreferences["Manufact"] = false;
             chosenPreferences["Educ"] = false;
-            chosenPreferences["Transport"] = false;
-            chosenPreferences["Auto"] = false;
 
-            for (int i = 0; i < Industries.Count; i++)
+            if (Industries != null)
             {
-                string[] industryIndex = Industries[i].Split('-');
-                chosenPreferences[industryIndex[0]] = industryIndex[1];
+                //this is where the update to the hashtable happens
+                for (int i = 0; i < Industries.Count; i++)
+                {
+                    string[] industryIndex = Industries[i].Split('-');
+                    chosenPreferences[industryIndex[0]] = Convert.ToBoolean(industryIndex[1]);
+                }
             }
             //now I need to create a db object to update the userpreference table
             SampleStockPopEntities dbContext = new SampleStockPopEntities();
             UserPreference preference = dbContext.UserPreferences.Find("001");//will find userID..should be dynamic
+
             preference.Tech = (bool)chosenPreferences["Tech"];
             preference.Consumer = (bool)chosenPreferences["Consumer"];
             preference.Finance = (bool)chosenPreferences["Finance"];
@@ -51,6 +58,10 @@ namespace MarketStumblerFinal.Controllers
         }
 
 
+
+
+
+        //This is refined database - it creates a list of stock symbols that coorrespond to user preference, industry selections
         public List<string> refineDataBase()
         {
             SampleStockPopEntities dbContext = new SampleStockPopEntities();
