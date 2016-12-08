@@ -4,18 +4,32 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SampleStockPopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SampleStockPopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="SymbolData">
           <Key>
             <PropertyRef Name="Symbol" />
           </Key>
           <Property Name="Symbol" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Industry" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UserPreferences">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tech" Type="bit" />
+          <Property Name="Consumer" Type="bit" />
+          <Property Name="Finance" Type="bit" />
+          <Property Name="Manufact" Type="bit" />
+          <Property Name="Educ" Type="bit" />
+          <Property Name="Transport" Type="bit" />
+          <Property Name="Auto" Type="bit" />
         </EntityType>
         <EntityContainer Name="SampleStockPopModelStoreContainer">
           <EntitySet Name="SymbolData" EntityType="Self.SymbolData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPreferences" EntityType="Self.UserPreferences" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleStockPopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -24,10 +38,25 @@
             <PropertyRef Name="Symbol" />
           </Key>
           <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Industry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityContainer Name="SampleStockPopEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SymbolDatas" EntityType="Self.SymbolData" />
+          <EntitySet Name="UserPreferences" EntityType="SampleStockPopModel.UserPreference" />
         </EntityContainer>
+        <EntityType Name="UserPreference">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tech" Type="Boolean" />
+          <Property Name="Consumer" Type="Boolean" />
+          <Property Name="Finance" Type="Boolean" />
+          <Property Name="Manufact" Type="Boolean" />
+          <Property Name="Educ" Type="Boolean" />
+          <Property Name="Transport" Type="Boolean" />
+          <Property Name="Auto" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -37,7 +66,22 @@
           <EntitySetMapping Name="SymbolDatas">
             <EntityTypeMapping TypeName="SampleStockPopModel.SymbolData">
               <MappingFragment StoreEntitySet="SymbolData">
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
                 <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPreferences">
+            <EntityTypeMapping TypeName="SampleStockPopModel.UserPreference">
+              <MappingFragment StoreEntitySet="UserPreferences">
+                <ScalarProperty Name="Auto" ColumnName="Auto" />
+                <ScalarProperty Name="Transport" ColumnName="Transport" />
+                <ScalarProperty Name="Educ" ColumnName="Educ" />
+                <ScalarProperty Name="Manufact" ColumnName="Manufact" />
+                <ScalarProperty Name="Finance" ColumnName="Finance" />
+                <ScalarProperty Name="Consumer" ColumnName="Consumer" />
+                <ScalarProperty Name="Tech" ColumnName="Tech" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

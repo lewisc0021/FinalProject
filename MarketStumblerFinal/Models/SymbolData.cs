@@ -15,5 +15,6 @@ namespace MarketStumblerFinal.Models
     public partial class SymbolData
     {
         public string Symbol { get; set; }
+        public string Industry { get; set; }
     }
 }
