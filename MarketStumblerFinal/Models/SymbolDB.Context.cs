@@ -26,5 +26,6 @@ namespace MarketStumblerFinal.Models
         }
     
         public virtual DbSet<SymbolData> SymbolDatas { get; set; }
+        public virtual DbSet<UserPreference> UserPreferences { get; set; }
     }
 }
