@@ -22,6 +22,8 @@
     </div>             
 <div>
     <h3>@Html.ActionLink("Stumble", "StumblePage", "Results")</h3>
+    <input type="button" value="Change my settings" onclick="@("window.location.href='" + @Url.Action("index", "Personalize") + "'");" />
+
 </div>
   
 <!--public string Symbol { get; set; }
