@@ -5,7 +5,7 @@
       <PropertyRef Name="Symbol" />
     </Key>
     <Property Name="Symbol" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Industry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="UserPreference">
     <Key>
@@ -14,11 +14,14 @@
     <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Consumer" Type="Boolean" />
     <Property Name="Finance" Type="Boolean" />
-    <Property Name="Manufact" Type="Boolean" />
-    <Property Name="Educ" Type="Boolean" />
-    <Property Name="Transport" Type="Boolean" />
-    <Property Name="Auto" Type="Boolean" />
-    <Property Name="Tech" Type="Boolean" />
+    <Property Name="Manufacturing" Type="Boolean" />
+    <Property Name="Food" Type="Boolean" />
+    <Property Name="Transportation" Type="Boolean" />
+    <Property Name="Automotive" Type="Boolean" />
+    <Property Name="Technology" Type="Boolean" />
+    <Property Name="Medical" Type="Boolean" />
+    <Property Name="PreciousMetals" Type="Boolean" />
+    <Property Name="Services" Type="Boolean" />
   </EntityType>
   <EntityContainer Name="StockUniverseEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="SymbolDatas" EntityType="Self.SymbolData" />

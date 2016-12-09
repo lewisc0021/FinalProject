@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="4cf9c1108b9246bc88529b4399870b08" Name="Diagram1">
         <EntityTypeShape EntityType="StockUniverseModel.SymbolData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StockUniverseModel.UserPreference" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockUniverseModel.UserPreference" Width="1.5" PointX="2.875" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

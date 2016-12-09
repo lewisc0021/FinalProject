@@ -25,13 +25,16 @@ namespace MarketStumblerFinal.Controllers
         {
             Hashtable chosenPreferences = new Hashtable();
             //this is not the best way to do this-if I could get back a false by default(true if checked) that would be ideal
-            chosenPreferences["Auto"] = false;
+            chosenPreferences["Automotive"] = false;
             chosenPreferences["Finance"] = false;
-            chosenPreferences["Transport"] = false;
-            chosenPreferences["Tech"] = false;
+            chosenPreferences["Transportation"] = false;
+            chosenPreferences["Technology"] = false;
             chosenPreferences["Consumer"] = false;
-            chosenPreferences["Manufact"] = false;
-            chosenPreferences["Educ"] = false;
+            chosenPreferences["Manufacturing"] = false;
+            chosenPreferences["Food"] = false;
+            chosenPreferences["PreciousMetals"] = false;
+            chosenPreferences["Services"] = false;
+            chosenPreferences["Medical"] = false;
 
             if (Industries != null)
             {
@@ -46,13 +49,17 @@ namespace MarketStumblerFinal.Controllers
             StockUniverseEntities dbContext = new StockUniverseEntities();
             UserPreference preference = dbContext.UserPreferences.Find("002");//will find userID..should be dynamic
 
-            preference.Tech = (bool)chosenPreferences["Tech"];
+            preference.Technology = (bool)chosenPreferences["Technology"];
             preference.Consumer = (bool)chosenPreferences["Consumer"];
             preference.Finance = (bool)chosenPreferences["Finance"];
-            preference.Manufact = (bool)chosenPreferences["Manufact"];
-            preference.Educ = (bool)chosenPreferences["Educ"];
-            preference.Transport = (bool)chosenPreferences["Transport"];
-            preference.Auto = (bool)chosenPreferences["Auto"];
+            preference.Manufacturing = (bool)chosenPreferences["Manufacturing"];
+            preference.Transportation = (bool)chosenPreferences["Transportation"];
+            preference.Automotive = (bool)chosenPreferences["Automotive"];
+            preference.Medical = (bool)chosenPreferences["Medical"];
+            preference.Services = (bool)chosenPreferences["Services"];
+            preference.PreciousMetals = (bool)chosenPreferences["PreciousMetals"];
+            preference.Food = (bool)chosenPreferences["Food"];
+
             dbContext.SaveChanges();
             return RedirectToAction("StumblePage", "Results");
         }

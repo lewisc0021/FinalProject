@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="StockUniverseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="StockUniverseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="SymbolData">
           <Key>
             <PropertyRef Name="Symbol" />
           </Key>
           <Property Name="Symbol" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Industry" Type="nchar" MaxLength="10" />
+          <Property Name="Industry" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="UserPreference">
           <Key>
@@ -19,18 +19,20 @@
           <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Consumer" Type="bit" />
           <Property Name="Finance" Type="bit" />
-          <Property Name="Manufact" Type="bit" />
-          <Property Name="Educ" Type="bit" />
-          <Property Name="Transport" Type="bit" />
-          <Property Name="Auto" Type="bit" />
-          <Property Name="Tech" Type="bit" />
+          <Property Name="Manufacturing" Type="bit" />
+          <Property Name="Food" Type="bit" />
+          <Property Name="Transportation" Type="bit" />
+          <Property Name="Automotive" Type="bit" />
+          <Property Name="Technology" Type="bit" />
+          <Property Name="Medical" Type="bit" />
+          <Property Name="PreciousMetals" Type="bit" />
+          <Property Name="Services" Type="bit" />
         </EntityType>
         <EntityContainer Name="StockUniverseModelStoreContainer">
           <EntitySet Name="SymbolData" EntityType="Self.SymbolData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserPreference" EntityType="Self.UserPreference" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StockUniverseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -39,7 +41,7 @@
             <PropertyRef Name="Symbol" />
           </Key>
           <Property Name="Symbol" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Industry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Industry" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="UserPreference">
           <Key>
@@ -48,11 +50,14 @@
           <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Consumer" Type="Boolean" />
           <Property Name="Finance" Type="Boolean" />
-          <Property Name="Manufact" Type="Boolean" />
-          <Property Name="Educ" Type="Boolean" />
-          <Property Name="Transport" Type="Boolean" />
-          <Property Name="Auto" Type="Boolean" />
-          <Property Name="Tech" Type="Boolean" />
+          <Property Name="Manufacturing" Type="Boolean" />
+          <Property Name="Food" Type="Boolean" />
+          <Property Name="Transportation" Type="Boolean" />
+          <Property Name="Automotive" Type="Boolean" />
+          <Property Name="Technology" Type="Boolean" />
+          <Property Name="Medical" Type="Boolean" />
+          <Property Name="PreciousMetals" Type="Boolean" />
+          <Property Name="Services" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="StockUniverseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SymbolDatas" EntityType="Self.SymbolData" />
@@ -75,15 +80,18 @@
           <EntitySetMapping Name="UserPreferences">
             <EntityTypeMapping TypeName="StockUniverseModel.UserPreference">
               <MappingFragment StoreEntitySet="UserPreference">
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="PreciousMetals" ColumnName="PreciousMetals" />
+                <ScalarProperty Name="Medical" ColumnName="Medical" />
+                <ScalarProperty Name="Technology" ColumnName="Technology" />
+                <ScalarProperty Name="Automotive" ColumnName="Automotive" />
+                <ScalarProperty Name="Transportation" ColumnName="Transportation" />
+                <ScalarProperty Name="Food" ColumnName="Food" />
+                <ScalarProperty Name="Manufacturing" ColumnName="Manufacturing" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Consumer" ColumnName="Consumer" />
                 <ScalarProperty Name="Finance" ColumnName="Finance" />
-                <ScalarProperty Name="Manufact" ColumnName="Manufact" />
-                <ScalarProperty Name="Educ" ColumnName="Educ" />
-                <ScalarProperty Name="Transport" ColumnName="Transport" />
-                <ScalarProperty Name="Auto" ColumnName="Auto" />
-                <ScalarProperty Name="Tech" ColumnName="Tech" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>

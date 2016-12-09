@@ -26,33 +26,33 @@ namespace MarketStumblerFinal.Controllers
 
             UserPreference preference = dbContext.UserPreferences.Find("002");
 
-            if (preference.Auto == true)
+            if (preference.Automotive == true)
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry.Trim() == "Auto") // have to match the exact industry name here
+                    if (item.Industry.Trim() == "Automotive") // have to match the exact industry name here
                     {
                         userSymbols.Add(item.Symbol);
                     }
                 }
             }//
 
-            if (preference.Transport == true)
+            if (preference.Transportation == true)
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry == "Transport")
+                    if (item.Industry.Trim() == "Transportation")
                     {
                         userSymbols.Add(item.Symbol);
                     }
                 }
             }//
 
-            if (preference.Manufact == true)
+            if (preference.Manufacturing == true)
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry == "Manufact")
+                    if (item.Industry.Trim() == "Manufacturing")
                     {
                         userSymbols.Add(item.Symbol);
                     }
@@ -63,18 +63,18 @@ namespace MarketStumblerFinal.Controllers
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry == "Consumer")
+                    if (item.Industry.Trim() == "Consumer")
                     {
                         userSymbols.Add(item.Symbol);
                     }
                 }
             }//
 
-            if (preference.Educ == true)
+            if (preference.Food == true)
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry == "Educ")
+                    if (item.Industry.Trim() == "Food")
                     {
                         userSymbols.Add(item.Symbol);
                     }
@@ -85,25 +85,60 @@ namespace MarketStumblerFinal.Controllers
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry == "Finance")
+                    if (item.Industry.Trim() == "Finance")
                     {
                         userSymbols.Add(item.Symbol);
                     }
                 }
             }//
 
-            if (preference.Tech == true)
+            if (preference.Technology == true)
             {//
                 foreach (var item in allStocks)
                 {
-                    if (item.Industry == "Tech")
+                    if (item.Industry.Trim() == "Technology")
                     {
                         userSymbols.Add(item.Symbol);
                     }
                 }
             }//
+
+            if (preference.Services == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry.Trim() == "Services")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.PreciousMetals == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry.Trim() == "PreciousMetals")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+            if (preference.Medical == true)
+            {//
+                foreach (var item in allStocks)
+                {
+                    if (item.Industry.Trim() == "Medical")
+                    {
+                        userSymbols.Add(item.Symbol);
+                    }
+                }
+            }//
+
+
             //return RedirectToAction("StumblePage", "Results", userSymbols);
-           
+
 
             //foreach (var item in allStocks)
             //{

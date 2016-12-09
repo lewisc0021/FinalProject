@@ -12,14 +12,17 @@
     <EntitySetMapping Name="UserPreferences">
       <EntityTypeMapping TypeName="StockUniverseModel.UserPreference">
         <MappingFragment StoreEntitySet="UserPreference">
+          <ScalarProperty Name="Services" ColumnName="Services" />
+          <ScalarProperty Name="PreciousMetals" ColumnName="PreciousMetals" />
+          <ScalarProperty Name="Medical" ColumnName="Medical" />
+          <ScalarProperty Name="Technology" ColumnName="Technology" />
+          <ScalarProperty Name="Automotive" ColumnName="Automotive" />
+          <ScalarProperty Name="Transportation" ColumnName="Transportation" />
+          <ScalarProperty Name="Food" ColumnName="Food" />
+          <ScalarProperty Name="Manufacturing" ColumnName="Manufacturing" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Consumer" ColumnName="Consumer" />
           <ScalarProperty Name="Finance" ColumnName="Finance" />
-          <ScalarProperty Name="Manufact" ColumnName="Manufact" />
-          <ScalarProperty Name="Educ" ColumnName="Educ" />
-          <ScalarProperty Name="Transport" ColumnName="Transport" />
-          <ScalarProperty Name="Auto" ColumnName="Auto" />
-          <ScalarProperty Name="Tech" ColumnName="Tech" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

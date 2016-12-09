@@ -5,7 +5,7 @@
       <PropertyRef Name="Symbol" />
     </Key>
     <Property Name="Symbol" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="Industry" Type="nchar" MaxLength="10" />
+    <Property Name="Industry" Type="nchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="UserPreference">
     <Key>
@@ -14,11 +14,14 @@
     <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Consumer" Type="bit" />
     <Property Name="Finance" Type="bit" />
-    <Property Name="Manufact" Type="bit" />
-    <Property Name="Educ" Type="bit" />
-    <Property Name="Transport" Type="bit" />
-    <Property Name="Auto" Type="bit" />
-    <Property Name="Tech" Type="bit" />
+    <Property Name="Manufacturing" Type="bit" />
+    <Property Name="Food" Type="bit" />
+    <Property Name="Transportation" Type="bit" />
+    <Property Name="Automotive" Type="bit" />
+    <Property Name="Technology" Type="bit" />
+    <Property Name="Medical" Type="bit" />
+    <Property Name="PreciousMetals" Type="bit" />
+    <Property Name="Services" Type="bit" />
   </EntityType>
   <EntityContainer Name="StockUniverseModelStoreContainer">
     <EntitySet Name="SymbolData" EntityType="Self.SymbolData" Schema="dbo" store:Type="Tables" />

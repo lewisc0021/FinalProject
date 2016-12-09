@@ -17,10 +17,13 @@ namespace MarketStumblerFinal.Models
         public string UserID { get; set; }
         public Nullable<bool> Consumer { get; set; }
         public Nullable<bool> Finance { get; set; }
-        public Nullable<bool> Manufact { get; set; }
-        public Nullable<bool> Educ { get; set; }
-        public Nullable<bool> Transport { get; set; }
-        public Nullable<bool> Auto { get; set; }
-        public Nullable<bool> Tech { get; set; }
+        public Nullable<bool> Manufacturing { get; set; }
+        public Nullable<bool> Food { get; set; }
+        public Nullable<bool> Transportation { get; set; }
+        public Nullable<bool> Automotive { get; set; }
+        public Nullable<bool> Technology { get; set; }
+        public Nullable<bool> Medical { get; set; }
+        public Nullable<bool> PreciousMetals { get; set; }
+        public Nullable<bool> Services { get; set; }
     }
 }
