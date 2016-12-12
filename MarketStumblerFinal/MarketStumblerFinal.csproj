@@ -197,7 +197,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\SignInController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PersonalizeController.cs" />
@@ -348,18 +348,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\SignIn\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\SignIn\ConfirmEmail.cshtml" />
-    <Content Include="Views\SignIn\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\SignIn\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\SignIn\ForgotPassword.cshtml" />
-    <Content Include="Views\SignIn\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\SignIn\Login.cshtml" />
-    <Content Include="Views\SignIn\Register.cshtml" />
-    <Content Include="Views\SignIn\ResetPassword.cshtml" />
-    <Content Include="Views\SignIn\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\SignIn\SendCode.cshtml" />
-    <Content Include="Views\SignIn\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Personalize\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Personalize\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Personalize\Manage\Index.cshtml" />
@@ -371,9 +371,12 @@
     <Content Include="Views\Personalize\Index.cshtml" />
     <Content Include="Views\Results\StumblePage.cshtml" />
     <Content Include="Views\Results\Index.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Account\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
