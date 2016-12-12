@@ -4,14 +4,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
     <title>@ViewBag.Symbol</title>
-</head>
-<body style="margin: 0px;">
-    <div>
-        @{
-            <img style="-webkit-user-select: none" src='http://chart.finance.yahoo.com/c/1y/@Html.Raw(ViewBag.Symbol)'>
+    <style type="text/css">
+        html, body, .container {
+            height: 100%;
+            min-height: 100%;
         }
-    </div>
+
+        .Graph {
+            float: right;
+            width: 100%;
+            height: 65%;
+            background-color: cyan;
+        }
+
+        .details {
+            float: right;
+            width: 50%;
+            height: 35%;
+            background-color: #DDDDDD;
+        }
+
+        .Paragraph {
+            float: right;
+            width: 50%;
+            height: 35%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Graph">
+            Graph
+            <div>
+                @{
+                    <img style="-webkit-user-select: none" src='http://chart.finance.yahoo.com/c/1y/@Html.Raw(ViewBag.Symbol)'>
+                }
+            </div>
+        </div>
+        <div class="details">
+            details
+            <div>52 week range 1</div>
+            <div>&nbsp;</div>
+            <div>Risk Metric 2</div>
+            <div>&nbsp;</div>
+            <div>P/E ratio   3</div>
+            <div>&nbsp;</div>
+            <div> 1 year Target 4</div>
+            <div>&nbsp;</div>
+            <div>price   5</div>
+        </div>
+        <div class="Paragraph">
+            
+            <h4>@ViewBag.Paragraph</h4>
+            
+        </div>
+
 </body>
 </html>

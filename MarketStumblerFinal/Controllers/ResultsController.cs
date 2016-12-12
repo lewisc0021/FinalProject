@@ -154,7 +154,7 @@ namespace MarketStumblerFinal.Controllers
             string csvData;
             Random r1 = new Random(DateTime.Now.Millisecond);
             int chosenIndex = r1.Next(0, refinedPop.Count - 1);
-            string Symbol = refinedPop[chosenIndex];
+            string Symbol = refinedPop[chosenIndex].Trim();
             string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snbaopl1";
 
             using (WebClient web = new WebClient())
