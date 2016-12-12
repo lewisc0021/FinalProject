@@ -22,6 +22,8 @@
     </div>             
 <div>
     <h3>@Html.ActionLink("Stumble", "StumblePage", "Results")</h3>
+    <a href="/Popup1/Popup1?Symbol= @Model.Symbol" class="Button">See Graph</a>
+
     <input type="button" value="Change my settings" onclick="@("window.location.href='" + @Url.Action("index", "Personalize") + "'");" />
 
 </div>

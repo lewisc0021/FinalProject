@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
+    <title>@ViewBag.Symbol</title>
+</head>
+<body style="margin: 0px;">
+    <div>
+        @{
+            <img style="-webkit-user-select: none" src='http://chart.finance.yahoo.com/c/1y/@Html.Raw(ViewBag.Symbol)'>
+        }
+    </div>
+</body>
+</html>
