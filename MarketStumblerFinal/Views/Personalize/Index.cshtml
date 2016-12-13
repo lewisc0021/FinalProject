@@ -10,6 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/content/css/tiletemplatewith1.css" rel="stylesheet" />
     <title>Index</title>
 </head>
 <body>
@@ -87,6 +88,97 @@
         <br>
         <input type="submit" name="submitIndustries" value="submit" /><br>//
     </form>
+
+    <div style="width:4%;  float: left;" class="container">
+        <div class="space">Test</div>
+    </div>
+
+    <div style="width:25%; height:75%; float: left;" class="container">
+        <div class="top">Test</div>
+        <div class="symbol">YHOO</div>
+        <div class="mid">Test</div>
+        <div class="change">(-0.04%)</div>
+
+        @{var Change_PercentChange = 1;}
+        @if (Change_PercentChange > 0)
+        {
+            <div class="arrow" style="color: #7FFF00">&#8593;</div>
+        }
+        @if (Change_PercentChange < 0)
+        {
+            <div class="arrow" style="color: red">&#8595;</div>
+        }
+
+        @if (Change_PercentChange == 0)
+        {
+            <div class="arrow" style="color: white">&#8211;</div>
+        }
+        <div class="price">$23.45</div>
+        <div class="companyname">General Electric</div>
+    </div>
+
+    <div style="width:10%;  float: left;" class="container" href=LINK>
+        <div class="space">Test</div>
+    </div>
+
+    <div style="width:25%; height:75%; float: left;" class="container">
+        <div class="top">Test</div>
+        <div class="symbol">YHOO</div>
+        <div class="mid">Test</div>
+        <div class="change">(-0.04%)</div>
+
+
+        @if (Change_PercentChange > 0)
+        {
+            <div class="arrow" style="color: #7FFF00">&#8593;</div>
+        }
+        @if (Change_PercentChange < 0)
+        {
+            <div class="arrow" style="color: red">&#8595;</div>
+        }
+
+        @if (Change_PercentChange == 0)
+        {
+            <div class="arrow" style="color: white">&#8211;</div>
+        }
+        <div class="price">$23.45</div>
+        <div class="companyname">General Electric</div>
+    </div>
+
+    <div style="width:10%;  float: left;" class="container">
+        <div class="space">Test</div>
+    </div>
+
+    <div style="width:25%; height:75%; float: left;" class="container">
+        <div class="top">Test</div>
+        <div class="symbol">YHOO</div>
+        <div class="mid">Test</div>
+        <div class="change">(-0.04%)</div>
+
+
+        @if (Change_PercentChange > 0)
+        {
+            <div class="arrow" style="color: #7FFF00">&#8593;</div>
+        }
+        @if (Change_PercentChange < 0)
+        {
+            <div class="arrow" style="color: red">&#8595;</div>
+        }
+
+        @if (Change_PercentChange == 0)
+        {
+            <div class="arrow" style="color: white">&#8211;</div>
+        }
+        <div class="price">$23.45</div>
+        <div class="companyname">General Electric</div>
+    </div>
+
+    <div style="width:4%;  float: right;" class="container">
+        <div class="space">Test</div>
+    </div>
+
+
+
 
 </body>
 </html>
