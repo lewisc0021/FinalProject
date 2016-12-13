@@ -17,7 +17,7 @@ namespace MarketStumblerFinal.Models
                 if (string.IsNullOrEmpty(row)) continue;
                 string[] cols = row.Split(',');
                 // detect the problem when name is split by comma(,Inc.)
-                if (cols.Length == 8)
+                if (cols.Length == 9)
                 {
                     i += 1;
                     cols[1] += ", Inc.";
@@ -50,41 +50,51 @@ namespace MarketStumblerFinal.Models
 
                 try
                 {
-                    Company.Open = Convert.ToDecimal(cols[4 + i]);
+                    Company.perChange = Convert.ToDecimal(cols[4 + i]);
                    
                 }
                 catch
                 {
 
-                    Company.Open = decimal.Zero;
+                    Company.perChange = decimal.Zero;
                 }
 
                 
 
                 try
                 {
-                    Company.PreviousClose = Convert.ToDecimal(cols[5 + i]);
+                    Company.FiftyTwoRange = Convert.ToDecimal(cols[5 + i]);
                 }
                 catch
                 {
 
-                    Company.PreviousClose = decimal.Zero;
+                    Company.FiftyTwoRange = decimal.Zero;
                 }
 
                 
 
                 try
                 {
-                    Company.Last = Convert.ToDecimal(cols[6 + i]);
+                    Company.OneYrTarg = Convert.ToDecimal(cols[6 + i]);
 
                 }
                 catch
                 {
 
-                    Company.Last = decimal.Zero;
+                    Company.OneYrTarg = decimal.Zero;
                 }
 
-                
+                try
+                {
+                    Company.peRatio = Convert.ToDecimal(cols[6 + i]);
+
+                }
+                catch
+                {
+
+                    Company.peRatio = decimal.Zero;
+                }
+
 
                 stockInfo.Add(Company);
 
