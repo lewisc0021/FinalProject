@@ -18,7 +18,7 @@ namespace MarketStumblerFinal.Controllers
         public ActionResult Popup1(string Symbol)
         {
             Symbol  = Symbol.Substring(1, Symbol.Length - 2);
-            WebRequest request = WebRequest.Create("https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + Symbol + "?modules=assetProfile");
+            WebRequest request = WebRequest.Create("https://query2.finance.yahoo.com/v10/finance/quoteSummary/" + Symbol + "?modules=assetProfile");//url to screen scrape paragraph
             WebResponse response = request.GetResponse();
             Stream data = response.GetResponseStream();
             string html = String.Empty;
@@ -26,8 +26,8 @@ namespace MarketStumblerFinal.Controllers
             {
                 html = sr.ReadToEnd();
             }
-            string start = "longBusinessSummary";
-            string end = "fullTimeEmployees";
+            string start = "longBusinessSummary";//start reading paragraph from yahoo finance here
+            string end = "fullTimeEmployees";// stop reading paragraph from yahoo finance here
             string paragraph = getBetween(html, start, end);
             string paragraphTrimmed = paragraph.Substring(2, paragraph.Length - 4);
             ViewBag.Paragraph = paragraphTrimmed;
@@ -49,7 +49,7 @@ namespace MarketStumblerFinal.Controllers
             }
             string start = "longBusinessSummary";
             string end = "fullTimeEmployees";
-            string paragraph = getBetween(html, start, end);
+            string paragraph = getBetween(html, start, end); 
             string paragraphTrimmed = paragraph.Substring(2, paragraph.Length - 4);
             ViewBag.Paragraph = paragraphTrimmed;
             return View("Popup1");

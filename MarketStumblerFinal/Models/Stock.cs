@@ -6,7 +6,7 @@ using System.Web;
 namespace MarketStumblerFinal.Models
 {
     public class Stock
-    {
+    {   //Property for Company any stock object will have these properties
         public string Symbol { get; set; }
         public string Name { get; set; }
         public decimal Bid { get; set; }
