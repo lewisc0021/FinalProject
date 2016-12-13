@@ -158,6 +158,8 @@ namespace MarketStumblerFinal.Controllers
 
             List<Stock> Companies = YahooFinance.Parse(csvData);
             Stock Company = Companies.ElementAt(0);
+            ViewBag.Symbol = Symbol;
+            ViewBag.Name = Company.Name.Substring(1,Company.Name.Length-2);
             return View("StumblePage", Company);
         }
 
