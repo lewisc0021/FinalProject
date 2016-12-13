@@ -151,15 +151,16 @@ namespace MarketStumblerFinal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser{UserName = model.Email, Email = model.Email};
+
 
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
                 user.ExpLevel = model.ExpLevel;
                 user.Address = model.Address;
+                user.PhoneNumber = model.PhoneNumber; 
 
-
-                var result = await UserManager.CreateAsync(user, model.Password);
+            var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
