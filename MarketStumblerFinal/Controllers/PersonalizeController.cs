@@ -23,9 +23,9 @@ namespace MarketStumblerFinal.Controllers
 
         [HttpPost]
         public ActionResult Index(List<string> Industries)
-        {
+        {  //Hashtable created to initialize user preference values to false
             Hashtable chosenPreferences = new Hashtable();
-            //this is not the best way to do this-if I could get back a false by default(true if checked) that would be ideal
+            
             chosenPreferences["Automotive"] = false;
             chosenPreferences["Finance"] = false;
             chosenPreferences["Transportation"] = false;
@@ -38,18 +38,18 @@ namespace MarketStumblerFinal.Controllers
             chosenPreferences["Medical"] = false;
 
             if (Industries != null)
-            {
+            {    
                 //this is where the update to the hashtable happens
                 for (int i = 0; i < Industries.Count; i++)
                 {
-                    string[] industryIndex = Industries[i].Split('-');
-                    chosenPreferences[industryIndex[0]] = Convert.ToBoolean(industryIndex[1]);
+                    string[] industryIndex = Industries[i].Split('-');//Takes the values in the industries list and splits it with (-)
+                    chosenPreferences[industryIndex[0]] = Convert.ToBoolean(industryIndex[1]);//Overrides existing key and adds the boolean true
                 }
             }
-            //now I need to create a db object to update the userpreference table
-            StockUniverseEntities dbContext = new StockUniverseEntities();
-            UserPreference preference = dbContext.UserPreferences.Find("002");//will find userID..should be dynamic
-
+            //now I need to create a db object to update the userpreference table -ORM is created
+            StockUniverseEntities dbContext = new StockUniverseEntities(); //StockUniverse is the name of Azure database
+            UserPreference preference = dbContext.UserPreferences.Find("002");//Locates row that corresponds to find userID..should be dynamic
+            //using the hashtable to update the database
             preference.Technology = (bool)chosenPreferences["Technology"];
             preference.Consumer = (bool)chosenPreferences["Consumer"];
             preference.Finance = (bool)chosenPreferences["Finance"];

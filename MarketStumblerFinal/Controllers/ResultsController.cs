@@ -20,12 +20,12 @@ namespace MarketStumblerFinal.Controllers
 
         private static List<string> GetSymbols()
         {
-            StockUniverseEntities dbContext = new StockUniverseEntities();
-            List<SymbolData> allStocks = dbContext.SymbolDatas.ToList();
+            StockUniverseEntities dbContext = new StockUniverseEntities(); 
+            List<SymbolData> allStocks = dbContext.SymbolDatas.ToList();//Allstocks stored in symbolData table
             List<string> userSymbols = new List<string>();
 
             UserPreference preference = dbContext.UserPreferences.Find("002");
-
+            //Comparing users selection to what is stored in the database
             if (preference.Automotive == true)
             {//
                 foreach (var item in allStocks)
@@ -134,30 +134,23 @@ namespace MarketStumblerFinal.Controllers
                         userSymbols.Add(item.Symbol);
                     }
                 }
-            }//
+            }
 
-
-            //return RedirectToAction("StumblePage", "Results", userSymbols);
-
-
-            //foreach (var item in allStocks)
-            //{
-            //    userSymbols.Add(item.Symbol);
-            //}
+   
             return userSymbols;
         }
 
 
         public ActionResult StumblePage()
         {
-            List<string> refinedPop = GetSymbols();
+            List<string> refinedPop = GetSymbols();//UserSymbols becomes refinedPop
             string csvData;
             Random r1 = new Random(DateTime.Now.Millisecond);
-            int chosenIndex = r1.Next(0, refinedPop.Count - 1);
+            int chosenIndex = r1.Next(0, refinedPop.Count - 1);//
             string Symbol = refinedPop[chosenIndex].Trim();
-            string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snbaopl1";
+            string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snbaopl1";//Only sends randomly selected symbol to the API
 
-            using (WebClient web = new WebClient())
+            using (WebClient web = new WebClient()) //Class that has a method to download the API information from web
             {
                 csvData = web.DownloadString(URL);
 
