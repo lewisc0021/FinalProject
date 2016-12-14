@@ -19,7 +19,7 @@ namespace MarketStumblerFinal.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Tommy Saundra Ragu and Q";
+            
 
             return View();
         }

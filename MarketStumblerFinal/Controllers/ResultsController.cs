@@ -148,7 +148,7 @@ namespace MarketStumblerFinal.Controllers
             Random r1 = new Random(DateTime.Now.Millisecond);
             int chosenIndex = r1.Next(0, refinedPop.Count - 1);//
             string Symbol = refinedPop[chosenIndex].Trim();
-            string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snbak2wt8r2";//Only sends randomly selected symbol to the API
+            string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snbap2wt8r";//Only sends randomly selected symbol to the API
 
             using (WebClient web = new WebClient()) //Class that has a method to download the API information from web
             {
@@ -158,14 +158,12 @@ namespace MarketStumblerFinal.Controllers
 
             List<Stock> Companies = YahooFinance.Parse(csvData);
             Stock Company = Companies.ElementAt(0);
+            ViewBag.Symbol = Symbol;
+            ViewBag.Name = Company.Name.Substring(1,Company.Name.Length-2);
             return View("StumblePage", Company);
         }
 
-        //private static decimal calcBeta(Stock Company)
-        //{
-
-        //}
-
+        
 
 
     }//END
