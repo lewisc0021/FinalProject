@@ -6,88 +6,40 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <link href="~/content/css/tiletemplatewith1.css" rel="stylesheet" />
-    <title>Index</title>
+	<title>index</title>
+	<style>
+	td {font-size: 21px;
+		color:blue;}
+	</style>
 </head>
 <body>
-    <div>
+  <div>
        
         <form action=""></form>
     </div>
     <form action="/Personalize/Index" method="POST">
         <br>
-        <table>
-            <tr>
-                <td>Automotive</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Automotive-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Finance</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Finance-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Transportation</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Transportation-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Technology</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Technology-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Consumer Goods</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Consumer-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Manufacturing</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Manufacturing-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Medical</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Medical-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Food</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Food-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Services</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="Services-true" />
-                </td>
-            </tr>
-            <tr>
-                <td>Precious Metals</td>
-                <td>
-                    <input type="checkbox" name="Industries" value="PreciousMetals-true" />
-                </td>
-            </tr>    
-        
-        </table>
-        <br>
-        <h3>If nothing is selected, all industries will be stumbled through</h3>
-        <br>
-        <input type="submit" name="submitIndustries" value="submit" /><br>//
-    </form>
+<form >
+<br>
+<br>
+<center><font color="grey" size="6">INDUSTRY</font></center>
+<table align="center">
+<tr><td><input type="checkbox" name="Industries" value="Technology-true"></td><td>Technology</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Manufacturing-true"></td><td>Manufacturing</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Food-true"></td><td>Food</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Transport-true"></td><td>Transport</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Automotive-true"></td><td>Automotive</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Consumer-true"></td><td>Consumer goods</td></tr><br>
+<tr><td><input type="checkbox" name="Industries" value="Services-true"></td><td>Services</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Finance-true"></td><td>Finance</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="Medical-true"></td><td>Medical</td></tr>
+<tr><td><input type="checkbox" name="Industries" value="PreciousMetals-true"></td><td>Precious Metals</td></tr>
 
+<tr><td colspan="2"><br /><button type="submit" form="form1" value="Submit">Capitalize</button></td></tr>
+</table>
+  </form>
+  
 </body>
 </html>
