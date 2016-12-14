@@ -1,6 +1,4 @@
-﻿
-using MarketStumblerFinal.fonts.Models;
-///Personalize Controller
+﻿///Personalize Controller
 using MarketStumblerFinal.Models;
 using System;
 using System.Collections;

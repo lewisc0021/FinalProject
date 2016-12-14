@@ -1,5 +1,4 @@
-﻿using MarketStumblerFinal.fonts.Models;
-using MarketStumblerFinal.Models;
+﻿using MarketStumblerFinal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -149,11 +148,8 @@ namespace MarketStumblerFinal.Controllers
             Random r1 = new Random(DateTime.Now.Millisecond);
             int chosenIndex = r1.Next(0, refinedPop.Count - 1);//
             string Symbol = refinedPop[chosenIndex].Trim();
-<<<<<<< HEAD
+
             string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snl1acwt8r2";//Only sends randomly selected symbol to the API
-=======
-            string URL = "http://finance.yahoo.com/d/quotes.csv?s=" + Symbol + "&f=snbap2wt8r";//Only sends randomly selected symbol to the API
->>>>>>> 8d429ccef1ff10dc9c3f590e0a5dd402fec1700e
 
             using (WebClient web = new WebClient()) //Class that has a method to download the API information from web
             {

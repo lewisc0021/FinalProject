@@ -11,15 +11,10 @@ namespace MarketStumblerFinal.Models
         public string Name { get; set; } //1
         public decimal Bid { get; set; } //2
         public decimal Ask { get; set; } //3
-        public decimal perChange { get; set; } //4
+        public string perChange { get; set; } //4
         public decimal FiftyTwoRange { get; set; } //5
         public decimal OneYrTarg { get; set; } //6
         public decimal peRatio { get; set; } //7
-
-        //public decimal Open { get; set; }
-        //public decimal PreviousClose { get; set; }
-        //public decimal Last { get; set; }
-
 
     }
 }

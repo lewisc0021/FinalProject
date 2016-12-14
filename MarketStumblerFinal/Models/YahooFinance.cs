@@ -17,53 +17,57 @@ namespace MarketStumblerFinal.Models
                 if (string.IsNullOrEmpty(row)) continue;
                 string[] cols = row.Split(',');
                 // detect the problem when name is split by comma(,Inc.)
-                if (cols.Length == 9)
-                {
-                    i += 1;
-                    cols[1] += ", Inc.";
-                }
+                //if (cols.Length == 9)
+                //{
+                //    i += 1;
+                //    cols[1] += ", Inc.";
+                //}
                 Stock Company = new Stock();
                 Company.Symbol = cols[0];
                 Company.Name = cols[1];
                 try
                 {
-                    Company.Bid = Convert.ToDecimal(cols[2 + i]);
+                    Company.Bid = Math.Round(Convert.ToDecimal(cols[cols.Length - 6]), 2);
                 }
-                catch 
+                catch
                 {
 
                     Company.Bid = decimal.Zero;
                 }
-                
-                
+
+
 
                 try
                 {
-                    Company.Ask = Convert.ToDecimal(cols[3 + i]);
+                    Company.Ask = Convert.ToDecimal(cols[cols.Length - 5]);
                 }
                 catch
                 {
 
                     Company.Ask = decimal.Zero;
                 }
-               
+
+
+                //try
+                //{
+                string[] perChangeList = cols[cols.Length - 4].Split();
+                double exactChange = Math.Round(Convert.ToDouble(perChangeList[2].Substring(1, perChangeList[2].Length - 3)), 2);
+                //Math.Round(Convert.ToDouble(perChangeList[2].Substring(1, perChangeList[2].Length - 2))).ToString();
+                Company.perChange = perChangeList[2].ElementAt(0) + exactChange.ToString();
+                //Company.perChange = perChangeList[2].Substring(0, perChangeList[2].Length - 2);
+
+                //}
+                //catch
+                //{
+
+                //    Company.perChange = "N/A";
+                //}
+
+
 
                 try
                 {
-                    Company.perChange = Convert.ToDecimal(cols[4 + i]);
-                   
-                }
-                catch
-                {
-
-                    Company.perChange = decimal.Zero;
-                }
-
-                
-
-                try
-                {
-                    Company.FiftyTwoRange = Convert.ToDecimal(cols[5 + i]);
+                    Company.FiftyTwoRange = Convert.ToDecimal(cols[cols.Length - 3]);
                 }
                 catch
                 {
@@ -71,11 +75,11 @@ namespace MarketStumblerFinal.Models
                     Company.FiftyTwoRange = decimal.Zero;
                 }
 
-                
+
 
                 try
                 {
-                    Company.OneYrTarg = Convert.ToDecimal(cols[6 + i]);
+                    Company.OneYrTarg = Convert.ToDecimal(cols[cols.Length - 2]);
 
                 }
                 catch
@@ -86,7 +90,7 @@ namespace MarketStumblerFinal.Models
 
                 try
                 {
-                    Company.peRatio = Convert.ToDecimal(cols[6 + i]);
+                    Company.peRatio = Convert.ToDecimal(cols[cols.Length - 1]);
 
                 }
                 catch
@@ -106,3 +110,4 @@ namespace MarketStumblerFinal.Models
 
     }
 }
+
