@@ -20,26 +20,28 @@
 
         <a href="#" onclick="javascript: window.open('/Popup1/Popup1?Symbol=@Model.Symbol', '123', 'location=no,width=900px,height=600px'); return false;">details>
             <div style="width:25%; height:75%; float: left;" class="container" href="/Popup1/Popup1?Symbol=@Model.Symbol">
-                <div class="top">Test</div>
-                <div class="symbol">@ViewBag.Symbol</div>
-                <div class="mid">Test</div>
-                <div class="change">@Model.perChange</div>
+                <div id="tile">
+                    <div class="top">Test</div>
+                    <div class="symbol">@ViewBag.Symbol</div>
+                    <div class="mid">Test</div>
+                    <div class="change">@Model.perChange%</div>
 
 
-                @if (@Model.perChange > 0)
-            {
-                    <div class="arrow" style="color: #7FFF00">&#8593;</div>
-                }
-                @if (@Model.perChange < 0)
-            {
-                    <div class="arrow" style="color: red">&#8595;</div>
-                }
+                    @if (@Model.perChange[0] == '+')
+                    {
+                        <div class="arrow" style="color: #7FFF00">&#8593;</div>
+                    }
+                    @if (@Model.perChange[0] == '-')
+                    {
+                        <div class="arrow" style="color: red">&#8595;</div>
+                    }
 
-                @if (@Model.perChange == 0)
-            {
-                    <div class="arrow" style="color: white" ; font-size 5em;>&#8211;</div>
-                }
-                <div class="price">@Model.Bid</div>
+                    @if (@Model.perChange[0] == ' ')
+                    {
+                        <div class="arrow" style="color: white" ; font-size 5em;>&#8211;</div>
+                    }
+                    <div class="price">$@Model.Bid</div>
+                </div>
                 <div class="companyname">@ViewBag.Name</div>
             </div>
             </a>
@@ -65,14 +67,19 @@
     <br>
     <br>
     <br>
+<<<<<<< HEAD
+    <br>
+    <br>
+=======
+>>>>>>> 8d429ccef1ff10dc9c3f590e0a5dd402fec1700e
         <br>
     <center>
         <div class="StumbleButton">
             <h3 align="center" class="Button"> @Html.ActionLink("Capitalize", "StumblePage", "Results")</h3>
-            <a href="/Popup1/Popup1?Symbol=@Model.Symbol" class="Button">See Graph</a>
+           
 
             <input type="button" value="Change my settings" onclick="@("window.location.href='" + @Url.Action("index", "Personalize") + "'");" />
-            <a href="#" onclick="javascript: window.open('/Popup1/Popup1?Symbol=@Model.Symbol', '123', 'location=no,width=900px,height=600px'); return false;">details</a>
+           <!-- <a href="#" onclick="javascript: window.open('/Popup1/Popup1?Symbol=@Model.Symbol', '123', 'location=no,width=900px,height=600px'); return false;">details</a>-->
 
         </div>
     </center>
