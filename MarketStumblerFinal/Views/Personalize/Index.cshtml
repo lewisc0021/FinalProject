@@ -29,26 +29,35 @@
         <style type="text/css">
             td {
                 height: 40px;
-                border-solid;
+                border-bottom:thick;
                 padding: 7px;
                 font-size: 40px;
+               
+                color: #05bca9;
             }
 
             .first {
-                background-color: grey;
+                background-color: black;
             }
 
             .second {
-                background-color: grey;
+                background-color: black;
             }
 
             .third {
-                background-color: grey;
+                background-color: black;
             }
 
             .btn input {
                 height: 50px;
                 font-size: 40px;
+            }
+
+            .Paragraph {
+                font-weight: bold;
+                font-family: sans-serif;
+                text-align: center;
+                font-size: large;
             }
 
             .brk {
@@ -63,41 +72,44 @@
     </div>
     <form action="/Personalize/Index" method="POST">
         <br>
-        <table align="center">
-            <center><tr rowspan=2><td class="btn" style="font-size:54px;" colspan="3"><center><font color="black">INDUSTRY</font></center></td></tr></center>
+        <center><div class="btn" style="font-size:54px;" colspan="3"><center><font face="verdana" color="white">CHOOSE AN INDUSTRY</font></center></div></center>
+        <br />
 
+        <table align="center" style="border-color:black;">           
             <tbody>
                 <tr>
-                    <td class="first"><input type="checkbox" name="Industries" value="Technology-true">Technology</td>
-                    <td class="second"><input type="checkbox" name="Industries" value="Manufacturing-true">Manufacturing</td>
+                    <td class="first"><input type="checkbox"  name="Industries" font color="white" value="Technology-true">   Technology</td>
+                    <td class="second"><input type="checkbox" name="Industries" value="Manufacturing-true">   Manufacturing</td>
                 </tr>
                 <tr><td class="brk" /></tr>
 
                 <tr>
-                    <td class="third"><input type="checkbox" name="Industries" value="Food-true">Food</td>
-                    <td class="first"><input type="checkbox" name="Industries" value="Transport-true">Transport</td>
+                    <td class="third"><input type="checkbox" name="Industries" value="Food-true">   Food</td>
+                    <td class="first"><input type="checkbox" name="Industries" value="Transportation-true">   Transportation</td>
                 </tr>
                 <tr><td class="brk" /></tr>
                 <tr>
-                    <td class="second"><input type="checkbox" name="Industries" value="Automotive-true">Automotive</td>
-                    <td class="third"><input type="checkbox" name="Industries" value="Consumer-true">Consumer goods</td>
+                    <td class="second"><input type="checkbox" name="Industries" value="Automotive-true">   Automotive</td>
+                    <td class="third"><input type="checkbox" name="Industries" value="Consumer-true">   Consumer goods</td>
                 </tr>
                 <tr><td class="brk" /></tr>
                 <tr>
-                    <td class="first"><input type="checkbox" name="Industries" value="Services-true">Services</td>
-                    <td class="second"><input type="checkbox" name="Industries" value="Finance-true">Finance</td>
+                    <td class="first"><input type="checkbox" name="Industries" value="Services-true" >   Services</td>
+                    <td class="second"><input type="checkbox" name="Industries" value="Finance-true">   Finance</td>
                 </tr>
                 <tr><td class="brk" /></tr>
                 <tr>
-                    <td class="third"><input type="checkbox" name="Industries" value="Medical-true">Medical</td>
-                    <td class="first"><input type="checkbox" name="Industries" value="PreciousMetals-true">Precious Metals</td>
-                </tr></tr>
+                    <td class="third"><input type="checkbox" name="Industries" value="Medical-true">   Medical</td>
+                    <td class="first"><input type="checkbox" name="Industries" value="PreciousMetals-true">   Precious Metals</td>
+                </tr>
                 <tr><td class="brk" /></tr>
-
-                <tr rowspan=2><td class="btn" colspan="3"><center><input type="submit" name="submitIndustries" value="Capitalize"></center></td><td></td></tr>
+                
+                <tr rowspan=4><td class="btn" colspan="3"><center><input type="submit" name="submitIndustries" value="Capitalize"></center></td><td></td></tr>
 
             </tbody>
-        </table><center>* please choose at least one industry from the above list before Capitalize.</center>
-    </form>
+        </table>
+   
+    
+     </form>
 </body>
 </html>

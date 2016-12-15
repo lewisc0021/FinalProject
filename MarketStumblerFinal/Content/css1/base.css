@@ -143,7 +143,9 @@ input {
 	line-height: normal;
 }
 input[type="checkbox"], input[type="radio"] {
-	box-sizing: border-box;
+	height: 50px;
+    width: 50px;
+    box-sizing: border-box;
 	padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,

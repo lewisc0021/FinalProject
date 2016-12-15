@@ -1,74 +1,47 @@
-html, body, .container
-div{
-    width:25% height:auto;
+
+.container {
+    text-align: center;
+    max-width:100%;
+}
+.info {
+    width: 100%;
 
 }
 
-.top{
-    float: right;
-    width: 100%;
-    height: 10%;
-    font-size: 0.5em;
-    font-family: Impact, Charcoal, sans-serif;
-    text-align: center;
-    color: rgba(255, 0, 0, 0.0);
-    background-color: #6596AB;
-    }
-
 .symbol{
-    float: right;
-    width: 100%;
-    height: 32%;
-    font-size: 8em;
+    font-size:7em;
     font-family: Impact, Charcoal, sans-serif;
     text-align: center;
     color: white;
-    background-color: #6596AB;
+    background-color: #05bca9;
+    display: block;
     }
 
-.mid{
-    float: right;
-    width: 100%;
-    height: 20%;
-    font-size: 0.5em;
-    font-family: Impact, Charcoal, sans-serif;
-    text-align: center;
-    color: rgba(255, 0, 0, 0.0);
-    background-color: #6596AB;
-    }
-
-
+#tile{
+    background-color: #05bca9;
+    max-width: 50%;
+    line-height:normal;
+    display:inline-block;
+}
 
 .arrow {
-    float: right;
-    width: 20%;
-    height: 8%;
-    font-size: 2.4em;
-    text-align: center;
-    background-color: #6596AB;
+    font-size: 2em;
+    width: 20%
     }
 
 
 .change {
-    float: right;
-    width: 45%;
-    height: 8%;
-    font-size: 2.4em;
+    font-size: 2em;
+    width: 40%;
     font-family: "Times New Roman", Times, serif;
-    text-align: center;
-   color: white;
-    background-color: #6596AB;
+    color: white;
 }
 
 .price {
-    float: right;
-    width: 35%;
-    height: 8%;
-    font-size: 2.4em;
+    font-size: 2em;
     font-family: "Times New Roman", Times, serif;
-    text-align: center;
+    width: 40%;
     color: white;
-    background-color: #6596AB;
     }
 
 .companyname {
@@ -78,7 +51,7 @@ div{
     font-size: 2em;
     font-family: Impact, Charcoal, sans-serif;
     text-align: center;
-    color: black;
+    color: white;
     background-color: rgba(255, 0, 0, 0.0);
 }
 
@@ -95,4 +68,5 @@ div{
 
 .StumbleButton {
         vertical-align:  bottom;
+        text-align:center;
         }
