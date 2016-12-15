@@ -1,47 +1,105 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-}
-
-<style type="text/css">
-body {
-    background-image: url("/content/images/background.jpg");
     
 }
-    
-</style>
 
+<head>
 
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Lhander</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+ 	<!-- CSS
+   ================================================== -->
+   @*<link rel="stylesheet" href="/Content/css1/base.css">  
+   <link rel="stylesheet" href="/Content/css1/main.css">
+   <link rel="stylesheet" href="/Content/css1/vendor.css">*@     
 
+   
+    @*<style>="background-image: url('/Content/images/intro-bg.jpg');"</style>*@
 
+   <!-- script
+   ================================================== -->
+	<script src="Content/js1/modernizr.js"></script>
 
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="/Content/favicon.png">
 
+</head>
 
+<body id="top">
 
+	<!-- header 
+   ================================================== -->
+   <header>
+
+   	<div class="row">
+
+   		<div class="logo">
+	         <a href="index.html">Lhander</a>
+	      </div>
+
+	   	@*<nav id="main-nav-wrap">
+				<ul class="main-navigation">
+					<li class="current"><a class="smoothscroll"  href="/Home/Index" title="">Home</a></li>
+					<li><a class="smoothscroll"  href="/Home/About" title="">About</a></li>
+					<li><a class="smoothscroll"  href="#features" title="">Features</a></li>
+					<li><a class="smoothscroll"  href="#pricing" title="">Pricing</a></li>
+					<li><a class="smoothscroll"  href="" title="">Login</a></li>					
+					<li class="highlight with-sep"><a href="/Account/Register" title="">Register</a></li>					
+				</ul>
+			</nav>*@
+
+			<a class="menu-toggle" href="#"><span>Menu</span></a>
+   		
+   	</div>   	
+   	
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">
+
+   	<div class="shadow-overlay"></div>
+
+   	<div class="intro-content">
+   		@*@<div class="row">
+
+   			<div class="col-twelve">
+
+	   			<div class='video-link'>
+	   				<a href="#video-popup"><img src="images/play-button.png" alt=""></a>
+	   			</div>*@
+
+	   			<h5>Hello welcome to the Stock Rumbler!!!.</h5>
+	   			<h1>Our awesome well guide you to the road to riches!</h1>
+
+	   			<a class="button stroke smoothscroll" href="/Home/About" title="">Learn More</a>
+
+	   		
+   			
+   		
+   	</div> 
+
+   	<!-- Modal Popup
+	   ========================================================= -->
+
+      @*<div id="video-popup" class="popup-modal mfp-hide">
+
+		   <div class="fluid-video-wrapper">
+            <iframe src="http://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=faec09" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+         </div>		     
+
+         <a class="close-popup">Close</a>         
+
+	   </div>*@ <!-- /video-popup -->  	 	
+
+   </section> <!-- /intro --

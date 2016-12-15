@@ -11,31 +11,47 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">*@
         <div class="container">
-            <div class="navbar-header">
+            @*<div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("StockStumbler", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+            </div>*@
+
+            <link rel="stylesheet" href="/Content/css1/base.css">
+            <link rel="stylesheet" href="/Content/css1/main.css">
+            <link rel="stylesheet" href="/Content/css1/vendor.css">
+
+
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+
+        <nav id="main-nav-wrap">
+            <ul class="main-navigation">
+                <li class="current"><a class="smoothscroll"  href="/Home/Index" title="">Home</a></li>
+                <li><a class="smoothscroll"  href="" title="">About</a></li>
+                <li><a class="smoothscroll"  href="/Account/Login" title="">Sign In</a></li>
+                <li class="highlight with-sep"><a href="/Account/Register"title="">Register</a></li>
+            </ul>
+        </nav>
+                @*<ul class="nav navbar-nav">
+
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Personalize", "Index", "Personalize")</li>
-                </ul>
+                </ul>*@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    @*</div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My Stock Rumbler Application</p>
         </footer>
     </div>
 
