@@ -10,85 +10,56 @@
     <meta name="viewport" content="width=device-width" />
     <link href="~/content/css/tiletemplatewith1.css" rel="stylesheet" />
     <title>StumblePage</title>
+    <style type="text/css">
+    .btn input
+    {
+    height: 50px;
+    font-size: 40px;
+    }
+        </style>
 </head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <center>
-        <div style="width:37.5%; float: left;" class="container">
-            <div class="space">Test</div>
-        </div>
-
-
-        <a href="#" onclick="javascript: window.open('/Popup1/Popup1?Symbol=@Model.Symbol', '123', 'location=no,width=900px,height=600px'); return false;">details>
-            <div style="width:25%; height:75%; float: left;" class="container" href="/Popup1/Popup1?Symbol=@Model.Symbol">
+        <a href="#" onclick="javascript: window.open('/Popup1/Popup1?Symbol=@Model.Symbol', '123', 'location=no,width=900px,height=600px'); return false;">
+            <div  class="container" href="/Popup1/Popup1?Symbol=@Model.Symbol">
                 <div id="tile">
-                    <div class="top">Test</div>
                     <div class="symbol">@ViewBag.Symbol</div>
-                    <div class="mid">Test</div>
-                    <div class="change">@Model.perChange%</div>
+                    <div class="info">
+                        <span class="price">$@Model.Bid</span>
 
 
-                    @if (@Model.perChange[0] == '+')
-                    {
-                        <div class="arrow" style="color: #7FFF00">&#8593;</div>
-                    }
-                    @if (@Model.perChange[0] == '-')
-                    {
-                        <div class="arrow" style="color: red">&#8595;</div>
-                    }
 
-                    @if (@Model.perChange[0] == ' ')
-                    {
-                        <div class="arrow" style="color: white" ; font-size 5em;>&#8211;</div>
-                    }
-                    <div class="price">$@Model.Bid</div>
+                        @if (@Model.perChange[0] == '+')
+                        {
+                            <span class="arrow" style="color: #7FFF00">&#8593;</span>
+                        }
+                        @if (@Model.perChange[0] == '-')
+                        {
+                            <span class="arrow" style="color: red">&#8595;</span>
+                        }
+
+                        @if (@Model.perChange[0] == ' ')
+                        {
+                            <span class="arrow" style="color: white" ; font-size 5em;>&#8211;</span>
+                        }
+                        <span class="change">@Model.perChange%</span>
+                    </div>
+
                 </div>
                 <div class="companyname">@ViewBag.Name</div>
             </div>
             </a>
-            <div style="width:37.5%;  float: right;" class="container">
+            <div style="width:37.5%;" class="container">
                 <div class="space">Test</div>
             </div>
 
-</center>
-        
-            <br>
-            <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-        <br>
-    <center>
         <div class="StumbleButton">
-            <h3 align="center" class="Button"> @Html.ActionLink("Capitalize", "StumblePage", "Results")</h3>
-           
+            <h3 align="center" class="btn"> @Html.ActionLink("Capitalize", "StumblePage", "Results")</h3>
 
             <input type="button" value="Change my settings" onclick="@("window.location.href='" + @Url.Action("index", "Personalize") + "'");" />
            <!-- <a href="#" onclick="javascript: window.open('/Popup1/Popup1?Symbol=@Model.Symbol', '123', 'location=no,width=900px,height=800px'); return false;">details</a>-->
 
         </div>
-    </center>
-
             <table>
 
                 @if (ViewBag.myStocks != null)
@@ -103,7 +74,6 @@
                     }
                 }
             </table>
-            </div>
 
 </body>
 </html>
