@@ -24,6 +24,14 @@ textarea {
 
 }
 
+#header 
+
+
+{
+    height: 5em;
+
+}
+
 .smoothscroll{
-    font-size: 6rem;
+    /*<--font-size: 4em;/-->*/
 }
