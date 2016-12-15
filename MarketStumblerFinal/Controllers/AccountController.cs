@@ -58,6 +58,7 @@ namespace MarketStumblerFinal.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+           // return Redirect("/Personalize/Index");
             return View();
         }
 
