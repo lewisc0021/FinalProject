@@ -578,7 +578,7 @@ label, legend {
 	font-family: "merriweather-bold", sans-serif;
 	font-size: 1.4rem;
 	margin-bottom: .6rem;
-	color: #404040;
+	color: #EAEAED;
 	display: block;
 }
 label span, legend span {
@@ -740,7 +740,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	letter-spacing: .4rem;
 }
 .section-intro .lead {
-	color: rgba(0, 0, 0, 0.45);
+	color: rgba(255,255,255, 0.45);
 }
 .section-intro .with-bottom-line {
 	position: relative;
@@ -2370,3 +2370,8 @@ footer ul li {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Add white text for form headings */
+.white-text {
+    color: #fff;
+}

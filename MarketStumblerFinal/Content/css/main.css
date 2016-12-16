@@ -99,7 +99,7 @@ a:hover, a:focus {
 
 h1, h2, h3, h4, h5, h6, .h01, .h02, .h03, .h04, .h05, .h06 {
 	font-family: "raleway-bold", sans-serif;
-	color: #252525;
+	color: #FFFFFF;
 	font-style: normal;
 	text-rendering: optimizeLegibility;
 	margin-bottom: 2.1rem;
@@ -578,7 +578,7 @@ label, legend {
 	font-family: "merriweather-bold", sans-serif;
 	font-size: 1.4rem;
 	margin-bottom: .6rem;
-	color: #404040;
+	color: #FFFFFF;
 	display: block;
 }
 label span, legend span {
@@ -586,6 +586,10 @@ label span, legend span {
 }
 input[type="checkbox"], input[type="radio"] {
 	display: inline;
+}
+
+.white-text{
+    color: #FFFFFF;
 }
 
 /**
@@ -740,7 +744,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	letter-spacing: .4rem;
 }
 .section-intro .lead {
-	color: rgba(0, 0, 0, 0.45);
+	color: rgba(0, 0, 0, 0.9);
 }
 .section-intro .with-bottom-line {
 	position: relative;
