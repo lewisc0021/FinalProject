@@ -136,10 +136,16 @@ namespace MarketStumblerFinal.Controllers
                 }
             }
 
-   
+            else
+            {
+                foreach (var item in allStocks)
+                {
+                    userSymbols.Add(item.Symbol);
+                }
+            }
+
             return userSymbols;
         }
-
 
         public ActionResult StumblePage()
         {
