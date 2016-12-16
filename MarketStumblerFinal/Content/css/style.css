@@ -5,3 +5,12 @@ float:left;
 margin: 0px;
 padding: 0px;
 }
+
+.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url("/Content/images/Ragu.jpg") no-repeat;
+	}

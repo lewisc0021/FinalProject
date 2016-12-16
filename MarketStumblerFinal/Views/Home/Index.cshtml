@@ -1,14 +1,17 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
+<div>
+    <a class="menu-toggle" href="#"><span>Menu</span></a>
+</div>
 
 <head>
 
    <!--- basic page needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Lhander</title>
+	<title>Home</title>
 	<meta name="description" content="">  
 	<meta name="author" content="">
 
@@ -18,12 +21,7 @@
 
  	<!-- CSS
    ================================================== -->
-   @*<link rel="stylesheet" href="/Content/css1/base.css">  
-   <link rel="stylesheet" href="/Content/css1/main.css">
-   <link rel="stylesheet" href="/Content/css1/vendor.css">*@     
-
-   
-    @*<style>="background-image: url('/Content/images/intro-bg.jpg');"</style>*@
+    
 
    <!-- script
    ================================================== -->
@@ -32,14 +30,15 @@
    <!-- favicons
 	================================================== -->
 	<link rel="icon" type="image/png" href="/Content/favicon.png">
-
+  
 </head>
 
 <body id="top">
+    
 
 	<!-- header 
    ================================================== -->
-   <header>
+   @*<header> Change
 
    	<div class="row">
 
@@ -51,18 +50,18 @@
    		
    	</div>   	
    	
-   </header> <!-- /header -->
+   </header>*@ <!-- /header -->
 
 	<!-- intro section
    ================================================== -->
    <section id="intro">
 
-   	<div class="shadow-overlay"></div>
+  
 
    	<div class="intro-content">
    		
 
-	   			<h5>Hello welcome to Capitalize!</h5>
+	   			<h5>Welcome to Capitalize!</h5>
 	   			<h1>Our awesome App will guide you on the road to riches!</h1>
            
 	   			<a class="button stroke smoothscroll" href="/Personalize/Index" title="">Capitalize</a>
