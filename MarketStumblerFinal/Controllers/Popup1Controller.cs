@@ -66,7 +66,7 @@ namespace MarketStumblerFinal.Controllers
             }
             else
             {
-                return "Description Not Found";
+                return "  Description Not Provided  ";
             }
         }
 

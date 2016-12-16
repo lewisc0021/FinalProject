@@ -11,17 +11,12 @@ namespace MarketStumblerFinal.Models
         {
             List<Stock> stockInfo = new List<Stock>();// creating an empty list of stock objects
             string[] rows = csvData.Replace("\r", "").Split('\n');
-            int i = 0;
+
             foreach (string row in rows)
             {
                 if (string.IsNullOrEmpty(row)) continue;
                 string[] cols = row.Split(',');
-                // detect the problem when name is split by comma(,Inc.)
-                //if (cols.Length == 9)
-                //{
-                //    i += 1;
-                //    cols[1] += ", Inc.";
-                //}
+
                 Stock Company = new Stock();
                 Company.Symbol = cols[0];
                 Company.Name = cols[1];
@@ -48,21 +43,9 @@ namespace MarketStumblerFinal.Models
                 }
 
 
-                //try
-                //{
                 string[] perChangeList = cols[cols.Length - 4].Split();
-                double exactChange = Math.Round(Convert.ToDouble(perChangeList[2].Substring(1, perChangeList[2].Length - 3)), 2);
-                //Math.Round(Convert.ToDouble(perChangeList[2].Substring(1, perChangeList[2].Length - 2))).ToString();
+                double exactChange = Math.Round(Convert.ToDouble(perChangeList[2].Substring(1, perChangeList[2].Length - 3)), 2);                
                 Company.perChange = perChangeList[2].ElementAt(0) + exactChange.ToString();
-                //Company.perChange = perChangeList[2].Substring(0, perChangeList[2].Length - 2);
-
-                //}
-                //catch
-                //{
-
-                //    Company.perChange = "N/A";
-                //}
-
 
 
                 try

@@ -65,26 +65,5 @@ namespace MarketStumblerFinal.Controllers
         }
 
 
-
-
-
-        //This is refined database - it creates a list of stock symbols that coorrespond to user preference, industry selections
-        
-
-
-
-
-        //[HttpGet]
-        //public ActionResult Index(string industryChoice)
-        //{
-        //    SampleStockPopEntities dbContext = new SampleStockPopEntities();
-        //    List<SymbolData> refinedPop1 = dbContext.SymbolDatas.ToList();
-
-        //    //save choice to data base
-        //    return RedirectToAction("Index","Home");
-
-        //}
-
-
     }
 }
